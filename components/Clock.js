@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { useStore } from "./StoreProvider";
 
-const Clock = observer(function Clock(props) {
+const Clock = observer((props) => {
   // use store from the store context
   const store = useStore();
 
