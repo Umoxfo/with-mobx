@@ -9,7 +9,7 @@ export const StoreContext = createContext();
 
 export function useStore() {
   const context = useContext(StoreContext);
-  if (context === undefined) {
+  if (!context) {
     throw new Error("useStore must be used within StoreProvider");
   }
 
@@ -24,6 +24,7 @@ function initializeStore(initialData = null) {
   if (initialData) {
     _store.hydrate(initialData);
   }
+  
   // For SSG and SSR always create a new store
   if (typeof window === "undefined") return _store;
   // Create the store once in the client

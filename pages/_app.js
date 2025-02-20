@@ -1,9 +1,12 @@
 import { StoreProvider } from "../components/StoreProvider";
+import { SampleStoreProvider } from "../components/SampleProvider";
 
 export default function App({ Component, pageProps }) {
   return (
-    <StoreProvider {...pageProps}>
-      <Component {...pageProps} />
-    </StoreProvider>
+    <SampleStoreProvider>
+      <StoreProvider {...pageProps}>
+        <Component {...pageProps} />
+      </StoreProvider>
+    </SampleStoreProvider>
   );
 }
