@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import Clock from "./Clock";
 import { useStore } from "./StoreProvider";
+import SampleComp from "./Sample";
 
 const Page = observer(function Page(props) {
   // use store from the store context
@@ -22,6 +23,7 @@ const Page = observer(function Page(props) {
     <div>
       <h1>{props.title}</h1>
       <Clock />
+      <SampleComp />
       <nav>
         <Link href={props.linkTo}>Navigate</Link>
       </nav>
