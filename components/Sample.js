@@ -5,7 +5,7 @@ const SampleComp = observer(() => {
 
     return (
         <ul>
-            {deps.entries().map([k, v] => <li key={k}>{v}</li>)}
+            {deps?.entries().map([k, v] => <li key={k}>{v}</li>)}
         </ul>
     );
 });
